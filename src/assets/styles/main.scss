@@ -1,9 +1,11 @@
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
 
-@use 'tailwind';
-@use 'landing';
-@use 'navbar';
-@use 'footer';
-@use '../fonts/fontface';
+// @import 'landing';
+// @import 'navbar';
+// @import 'footer';
+// @import '../fonts/fontface';
 
 $font-stack: rgb(18 113 227);
 
