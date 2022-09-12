@@ -18,7 +18,7 @@
   }
 }
 .footer-image {
-  @apply w-[80px];
+  width: 80px
 }
 .sub-footer-container {
   padding: 2em 1em;
@@ -34,7 +34,7 @@
       div{
        @apply w-[calc(100%-140px)] bg-white py-[8px] pl-2;
        input{
-        @apply w-full outline-none text-[14px]
+        @apply w-full text-[14px] outline-none 
        }
       }
       button{

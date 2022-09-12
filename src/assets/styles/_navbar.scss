@@ -22,7 +22,7 @@ $font-stack: rgb(18 113 227);
     @apply relative border-b-[4px] border-acearware-500 text-acearware-500 h-full;
 }
 .side-active-nav-link{
-    @apply relative border-b-[4px] border-acearware-500 text-acearware-500 h-full w-[90%];
+    @apply relative border-b-[4px] border-acearware-500 text-acearware-500  w-[90%] h-full;
 }
 .nav-link{
     @apply uppercase my-0 px-6 inline-block text-[13px] py-2 h-full inline-flex items-center;
@@ -62,9 +62,9 @@ $font-stack: rgb(18 113 227);
 }
 @keyframes slide {
     from{
-        @apply -left-[325px]
+        left : -325px
     }
     to{
-        @apply left-[0]
+        left: 0px
     }
 }

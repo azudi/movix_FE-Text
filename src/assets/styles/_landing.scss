@@ -35,7 +35,7 @@ $acearware-color: rgba(0, 100, 210, 0.06);
   @apply py-20 pt-28;
 }
 .hero-content-text {
-  @apply py-4 text-[15px];
+  @apply text-[15px] py-4 ;
   font-family: poppins-light;
 }
 .hero-content-button {
@@ -49,7 +49,7 @@ $acearware-color: rgba(0, 100, 210, 0.06);
   }
 }
 .hero-image {
-  @apply w-[90%] ml-[5%];
+  @apply w-[90%] ml-[5%] text-inherit;
 }
 .image-text-container {
   @apply md:block hidden;
@@ -93,7 +93,7 @@ $acearware-color: rgba(0, 100, 210, 0.06);
     @apply inline-block;
   }
   p {
-    @apply text-[13px];
+    @apply text-[13px] text-inherit;
   }
   span {
     @apply text-[13px] inline-flex mt-3 text-acearware-500 w-full items-center cursor-pointer;
