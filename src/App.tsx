@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import "./assets/styles/main.scss"
+import RootRoutes from './components/navigation/Routes';
+
+
+import {
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+const queryClient = new QueryClient()
+
+ 
+  interface themes {
+    light: {
+        color: string;
+        background: string;
+    };
+    dark: {
+        color: string;
+        background: string;
+    };
+}
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <QueryClientProvider client={queryClient}>
+      <RootRoutes/>
+  </QueryClientProvider>
   );
 }
 

@@ -1,0 +1,57 @@
+
+@use 'tailwind';
+@use 'landing';
+@use 'navbar';
+@use 'footer';
+@use '../fonts/fontface';
+
+$font-stack: rgb(18 113 227);
+
+html, body{
+    overflow-x: hidden !important;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.container{
+    width: 90%;
+}
+
+.about{
+    font-size: 2em;
+    font-weight: 700;
+}
+.top-nav{
+    padding: 1em;
+    width: 100%;
+    background-color: teal;
+    color:white;
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-weight: 700;
+}
+.input-calc{
+    margin: 0.5em;
+    border: 1px solid teal;
+    outline:none
+}
+.navlink{
+    width: 100%;
+    background-color: aqua;
+    font-weight: 700;
+    font-size: 1em;
+    text-decoration: none;
+    margin: 1em 0;
+    color: inherit;
+}
+.blue{
+    color: green;
+}
+.red{
+    color: red;
+}
+.response{
+    width:100%
+}

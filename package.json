@@ -10,10 +10,15 @@
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.33.1",
+    "react-icons": "^4.4.0",
+    "react-query": "^3.39.1",
     "react-scripts": "5.0.1",
     "typescript": "^4.7.4",
+    "typewriter-effect": "^2.19.0",
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.5.3",
     "workbox-broadcast-update": "^6.5.3",
@@ -51,5 +56,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-router-dom": "^6.3.0",
+    "sass": "^1.54.9",
+    "tailwindcss": "^3.1.8"
   }
 }
