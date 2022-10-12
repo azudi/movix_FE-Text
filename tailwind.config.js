@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         lengsqr: {
           300: '#39CDCC',
+          400: "#545F7D",
           500: '#213F7D',
         },
         lengsqrgray: {

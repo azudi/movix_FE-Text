@@ -1,4 +1,7 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400&family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&family=Lato&display=swap');
+
 .login-image-container{
   @apply flex flex-col h-full;
   :nth-of-type(2){
@@ -17,6 +20,7 @@
 }
 .input-form{
   @apply flex items-center w-full py-3 px-3 rounded-md mb-4 border-2 border-lengsqr-300/30;
+  font-family: 'Lato', sans-serif ;
   input{
     flex: 1 1 100%
   }
@@ -24,4 +28,12 @@
     @apply px-2 text-[13px] text-lengsqr-300 font-bold
   }
 }
-
+.header-form{
+  font-family: 'Inter Tight', sans-serif;
+}
+.header-label{
+  font-family: 'Lato', sans-serif !important;
+}
+.forgot-label{
+  font-family: 'Lato', sans-serif;
+}

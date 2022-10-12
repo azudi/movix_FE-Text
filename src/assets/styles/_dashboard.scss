@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400&display=swap');
+.dashboard-card{
+    @apply bg-white rounded-md p-4 px-5;
+    h2{
+        @apply text-[20px] font-bold
+    }
+    b{
+        @apply text-[11px] font-normal uppercase inline-block py-2
+    }
+}
+.user-table-head{
+    tr{
+        td{
+            @apply text-lengsqr-400 pb-3;
+            span{
+                @apply inline-flex items-center text-[13px] cursor-pointer;
+            }
+        }
+
+    }
+}
+.user-table-body{
+    font-family: 'Inter Tight', sans-serif !important;
+    tr{
+        @apply border-b-[1px] border-gray-100 text-[13px];
+        td{
+             @apply text-lengsqr-400/70 py-3 min-w-[180px] w-[15%];
+            span{
+                @apply inline-flex items-center text-[13px] cursor-pointer;
+            }
+        }
+        td:nth-of-type(7){
+            @apply py-4 min-w-[0px];
+            width:30px !important;
+           span{
+               @apply inline-flex items-center text-[13px] cursor-pointer;
+           }
+       }
+    }
+}
+
+.user-toggle-item{
+    @apply text-[12px] 
+}
+.drop-filter-component{
+    flex: 1 1 100%;
+}
+.filter-button-container{
+   @apply flex justify-between mt-6;
+    button{
+        @apply w-[45%] border-[2px] border-lengsqr-300 rounded-lg py-2 text-[12px];
+    }
+    button:nth-of-type(1){
+        @apply text-lengsqr-500
+    }
+    button:nth-of-type(2){
+        @apply text-white bg-lengsqr-300;
+    }
+}
+.hero-container{
+    @apply text-lengsqr-500
+}
+.sub-active-path{
+    @apply text-lengsqr-300 relative ;
+}
+.sub-active-path::before{
+   content:"";
+   @apply w-full h-[2px] bg-lengsqr-300 bottom-0 left-0 absolute
+}
+.user-info-pallet{
+    @apply p-3 lg:w-[20%] relative left-10 md:w-[25%] scale-0 sm:w-[33.3333333%] text-lengsqr-500 opacity-0;
+    transition:0.5s;
+    b{
+        @apply text-[11px] block font-normal uppercase;
+    }
+    span{
+        @apply font-bold text-[14px]
+    }
+}
+
+.cut-nav{
+    // transition: 0.5s;
+    // overflow:hidden !important;
+    // width: 0px !important;
+    // background-color: red;
+}
+.filter-container{
+    animation: 0.5s i linear swipe-out;
+}
+
+@keyframes swipe-out {
+    from{
+        transform: scale(0);
+        transform-origin: 0 0;
+    }
+    to{
+        transform: scale(1);
+    }
+}
+ .box-shake:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+  .dashboard-card:hover .effect-8 {
+    display: inline-block;
+    overflow: hidden;
+    &:before {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      transform:  translateY(-100%);
+    }
+    &:after {
+      content: attr(data-content);
+      top: 0;
+      left: 0;
+      height: 0;
+      margin: 12px;
+      color: rgb(33 63 125);
+      white-space: nowrap;
+      overflow: hidden;
+      transition: height .5s ease;
+    }
+    > span {
+      display: block;
+      margin: 2px;
+      padding: 10px;
+      background: white;
+    }
+    &:hover:before {
+      transform:  translateY(0);
+    }
+    &:hover:after {
+      height: calc(100% - 24px);
+    }
+  }
+  .custom-transition{
+    transition: 0.4s;
+  }
+  .transitFilter{
+    transition: 0.4s;
+    transform-origin: 0 0;
+    transform:scale(0) !important
+  }
+  .transitFilter-clear{
+    transition: 0.4s;
+    transform-origin: 0 0;
+    transform:scale(1)
+  }
+  .filter-container{
+    transform: scale(0);
+    transition: 0.4s;
+  }
+  .bash-start:hover .filter-container-mx{
+    transform: scale(1);
+  }
+  .nav-scroll-item{
+    left: -300px;
+    opacity: 0;
+    position: relative;
+    transition: 0.4s;
+  }
+  .card-pallet{
+    position: relative;
+    top:-400px;
+    transition: 0.4s;
+    opacity: 0;
+  }
+  .user-comp-detail{
+    transition: 0.3s;
+    opacity: 0;
+    left:-1000px
+  }
+  .hero-info-user{
+    transition: 0.3s;
+    opacity: 0;
+    position: relative;
+    left:-1000px
+  }

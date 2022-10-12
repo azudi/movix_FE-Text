@@ -14,7 +14,7 @@ function DashboardCard(props: Props) {
     return (
        <div className='dashboard-card'>
         <span>{details.icon}</span>
-          <b>{details.title}</b>
+          <b className='.effect-8'>{details.title}</b>
           <h2>{details.totalCount}</h2>
        </div>
     )
