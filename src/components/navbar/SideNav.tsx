@@ -1,70 +1,128 @@
-import React, {FC, useState} from 'react'
-import { useContext, useEffect} from 'react';
-//@ts-ignore
-import AcerwareLogo from '../svg-widget/AcerwareLogo';
-import { NavLink, useLocation } from "react-router-dom"
 
-interface Props{
-  name:string
-}
+import React, { Component } from 'react'
+import BriefcaseIcon from '../svg-icon/BriefcaseIcon'
+import HomeIcon from '../svg-icon/HomeIcon'
+import UserIcon from '../svg-icon/UserIcon'
+import GaurantorIcon from '../svg-icon/GaurantorIcon'
+import LoanIcon from '../svg-icon/LoanIcon'
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import DecisionIcon from '../svg-icon/DecisionIcon'
+import SavingsIcon from '../svg-icon/SavingsIcon'
+import LoanRequesticon from '../svg-icon/LoanRequesticon'
+import WhitelistIcon from '../svg-icon/WhitelistIcon'
+import UserICrossIcon from '../svg-icon/UserICrossIcon'
 
-const SideNav = (props : any) => {
-  //-- inbuilt variables
-  const location = useLocation();
+interface Props {}
 
-   //variables
-   const [link, setLink] = useState([
-     {
-      link: '/',
-      name: 'Home'
-     },{
-      link: '/shop',
-      name: 'Shop'
-     },{
-      link: '/about',
-      name: 'About'
-     },{
-      link: '/categories',
-      name: 'CATEGORIES'
-     },{
-      link: '/news',
-      name: 'NEWS'
-     },{
-      link: '/contact-us',
-      name: 'CONTACT US'
-     },
-    ])
+function SideNav(props: Props) {
+  const {} = props
+
+  //Variables
+  const [iconWidth, setWidthIcon] = useState(16)
+  const [routes, setRoutes] = useState([
+      {
+        name:'Users',
+        route: '/users',
+        Element: <UserIcon width={iconWidth}/>
+      },
+      {
+        name:'Gaurantor',
+        route: '/gaurantor',
+        Element: <GaurantorIcon width={iconWidth}/>
+      },
+      {
+        name:'Loan',
+        route: '/loan',
+        Element: <LoanIcon width={iconWidth}/>
+      },
+      {
+        name:'Decision Models',
+        route: '/Decision-Models',
+        Element: <DecisionIcon width={iconWidth}/>
+      },
+      {
+        name:'Savings',
+        route: '/savings',
+        Element: <SavingsIcon width={iconWidth}/>
+      },
+      {
+        name:'Loan-request',
+        route: '/loan-request',
+        Element: <LoanRequesticon width={iconWidth}/>
+      },
+      {
+        name:'Whitelist',
+        route: '/whitelist',
+        Element: <WhitelistIcon width={iconWidth}/>
+      },
+      {
+        name:'Karmar',
+        route: '/karmar',
+        Element: <UserICrossIcon width={iconWidth}/>
+      },
+    
+  ])
 
   return (
-    <>
-    { props.showNav
-     && 
-     <div className='west-slide md:hidden fixed left-0 top-0 w-[325px] h-full bg-white px-6 py-10 z-20 overflow-y-auto overflow-x-hidden'>
-       <div className=''>
-          <div className='acearware-logo mb-4'>
-             <NavLink to="/"><AcerwareLogo width='2200' height='55'/></NavLink>
-          </div>
-
-            <div className=''>
-               {
-                link.map((link, index)=>{
-                  return (
-                    <NavLink
-                     key={index + link.link}
-                     to={link.link}
-                     className={`side-nav-link h-full w-full ${
-                      location.pathname == link.link ? 'side-active-nav-link' : ''
-                     }`}
-                    >
-                      {link.name}
-                    </NavLink>
-                    )
-                })
-               }
-            </div>
+    <div className='w-full side-nav-container'>
+       <div className='text-[13px] flex items-center py-6  pl-8'>
+         <BriefcaseIcon width="15"/>
+         <span className='ml-2'>Switch Organization</span>
        </div>
-    </div> }
-    </>
+       <div className='text-[13px] flex items-center py-3  pl-8 opacity-60'>
+         <HomeIcon width="15"/>
+         <span className='ml-2'>Dashboard</span>
+       </div>
+
+       <div className='mt-4'>
+        <h2 className=' pl-8 text-[13px]'>CUSTOMERS</h2>
+          
+          {
+            routes.map((item, index)=>{
+              return (
+                <NavLink to ="" className='text-[13px] flex items-center py-3  pl-8 opacity-60'>
+                    { item.Element }
+                    <span className='ml-2'>{item.name}</span>
+                </NavLink>
+              )
+            })
+          }
+
+       </div>
+
+       <div className='mt-4'>
+        <h2 className=' pl-8 text-[13px]'>BUSINESSES</h2>
+          
+          {
+            routes.map((item, index)=>{
+              return (
+                <NavLink to ="" className='text-[13px] flex items-center py-3  pl-8 opacity-60'>
+                    { item.Element }
+                    <span className='ml-2'>{item.name}</span>
+                </NavLink>
+              )
+            })
+          }
+
+       </div>
+
+        <div className='mt-4'>
+        <h2 className=' pl-8 text-[13px]'>SETTINGS</h2>
+          
+          {
+            routes.map((item, index)=>{
+              return (
+                <NavLink to ="" className='text-[13px] flex items-center py-3  pl-8 opacity-60'>
+                    { item.Element }
+                    <span className='ml-2'>{item.name}</span>
+                </NavLink>
+              )
+            })
+          }
+
+       </div>
+    </div>
   )
 }
 

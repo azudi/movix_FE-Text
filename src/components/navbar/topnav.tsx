@@ -1,90 +1,42 @@
-import React, {FC, useState} from 'react'
-import { useContext, useEffect} from 'react';
-//@ts-ignore
-import AcerwareLogo from '../svg-widget/AcerwareLogo';
-import { NavLink, useLocation } from "react-router-dom"
-import SideNav from './SideNav';
 
+import React from 'react'
+import GroupLogo from "../../assets/image/Group.png"
+import BellNotificationIcon from '../svg-icon/BellNotificationIcon'
+import SearchIcon from '../svg-icon/SearchIcon'
+import profileIcon from "../../assets/image/image 4.png"
 
-interface Props{
-  name:string
-}
+interface Props {}
 
-const Topnav = () => {
-  //-- inbuilt variables
-  const location = useLocation();
-
-  //custom variable
-  const [nav, setNav] = useState(false)
-
-
- // Functions
- useEffect(()=>{
-  let body = document.querySelector('body') as HTMLElement
-  // body.onclick  = function(e){
-  //     setNav(e.pageX > 325 && nav == true ? !false : nav)
-  //  }
- },[])
-
-  const toggleSideNav = () =>{
-     setNav(!nav)
-  }
-
-   //variables
-   const [link, setLink] = useState([
-     {
-      link: '/',
-      name: 'Home'
-     },{
-      link: '/shop',
-      name: 'Shop'
-     },{
-      link: '/about',
-      name: 'About'
-     },{
-      link: '/categories',
-      name: 'CATEGORIES'
-     },{
-      link: '/news',
-      name: 'NEWS'
-     },{
-      link: '/contact-us',
-      name: 'CONTACT US'
-     },
-    ])
+function Topnav(props: Props) {
+  const {} = props
 
   return (
-    <div className='landing-container nav-bar-shadow fixed top-0 left-0 bg-white z-10'>
-       <div className='nav-bar-container relative'>
-          <div
-          onClick={toggleSideNav}
-          className='absolute right-4 inline-block cursor-pointer md:hidden'>
-          <span className="material-symbols-outlined">arrow_back_ios</span>
+    <nav className='nav-container h-20'>
+      <div className='w-6/12 md:w-3/12'>
+        <img alt="" src={GroupLogo} className='w-[120px]'></img>
+      </div>
+      <div className='w-6/12 md:inline-block hidden p-0'>
+          <div className='top-nav-search p-0'>
+            <input placeholder='Search anything'/>
+            <button>
+              <SearchIcon width='18'/>
+            </button>
           </div>
-          <div className='acearware-logo'>
-             <NavLink to="/"><AcerwareLogo width='2200' height='55'/></NavLink>
+      </div>
+      <div className='w-6/12 md:w-3/12 flex items-center justify-end lg:mr-5'>
+        <span className='inline-block mx-3 underline text-[14px] text-lengsqr-500'>Docs</span>
+          <span className='inline-block mx-3'>
+            <BellNotificationIcon width="25"/>
+          </span>
+          <div className='inline-flex mx-3 items-center'>
+            <span className='w-10 h-10 '>
+              <img src={profileIcon} alt='' className='rounded-full overflow-hidden'></img>
+            </span>
+            <small className='ml-1'>Adeniyi</small>
+            
           </div>
-
-            <div className='link-container'>
-               {
-                link.map((link, index)=>{
-                  return (
-                    <NavLink
-                     key={index + link.link}
-                     to={link.link}
-                     className={`nav-link h-full ${
-                      location.pathname == link.link ? 'active-nav-link' : ''
-                     }`}
-                    >
-                      {link.name}
-                    </NavLink>
-                    )
-                })
-               }
-            </div>
-       </div>
-       <SideNav showNav={nav}/>
-    </div>
+      </div>
+    </nav>
   )
 }
 

@@ -1,5 +1,5 @@
 $font-stack: rgb(18 113 227);
-
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400&display=swap');
 
 .landing-container{
     @apply w-full flex justify-center px-0; 
@@ -7,64 +7,23 @@ $font-stack: rgb(18 113 227);
 .nav-bar-container{
     @apply max-w-7xl w-full flex items-center flex-wrap px-3;
 }
-.nav-bar-shadow{
-    box-shadow: -1px 10px 32px -8px rgba(132,131,145,0.52);
-    -webkit-box-shadow: -1px 10px 32px -8px rgba(132,131,145,0.52);
-    -moz-box-shadow: -1px 10px 32px -8px rgba(132,131,145,0.52);
+.nav-container{
+    @apply flex items-center p-3 w-full;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 300
 }
-.acearware-logo{
-    @apply md:w-52 w-[50%] py-0;
-}
-.link-container{
-    @apply md:w-[calc(100%-13rem)] w-[50%] hidden md:block h-full;
-}
-.active-nav-link{
-    @apply relative border-b-[4px] border-acearware-500 text-acearware-500 h-full;
-}
-.side-active-nav-link{
-    @apply relative border-b-[4px] border-acearware-500 text-acearware-500  w-[90%] h-full;
-}
-.nav-link{
-    @apply uppercase my-0 px-6 inline-block text-[13px] py-2 h-full inline-flex items-center;
-    font-family: inter-light;
-}
-.side-nav-link{
-    @apply uppercase my-0 px-0 inline-block text-[13px] py-3 h-full inline-flex items-center;
-    font-family: inter-light;
-}
-.active-nav-link::before{
-    content: '';
-    position: absolute;
-    left:calc(50% - 3px);
-    bottom: 0;
-    border-top: 6px solid transparent;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid $font-stack
-}
-.side-active-nav-link::before{
-    content: '';
-    position: absolute;
-    left:calc(0% + 0px);
-    bottom: 0;
-    border-top: 6px solid transparent;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid $font-stack
-}
-.sticky{
-  position: sticky;
-  position:-webkit-sticky;
-  top:0
-}
-.west-slide{
-    animation: slide 0.2s ease-in 1;
-}
-@keyframes slide {
-    from{
-        left : -325px
+.top-nav-search{
+    @apply w-80 flex items-center  border-[1.7px] border-lengsqr-300/60 rounded-md;
+    input{
+      flex: 1 1 100%;
+      @apply text-[13px] pl-2
     }
-    to{
-        left: 0px
+    button{
+     @apply w-12 bg-lengsqr-300 py-[8px] grid place-items-center scale-[105%];
+     border-radius: 0 5px 5px 0;
     }
 }
+.side-nav-container{
+    font-family: 'Inter Tight', sans-serif;
+}
+

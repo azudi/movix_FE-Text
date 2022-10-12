@@ -4,8 +4,10 @@
 
 @import 'landing';
 @import 'navbar';
+@import "dashboard";
 @import 'footer';
 @import '../fonts/fontface';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 
 $font-stack: rgb(18 113 227);
 
@@ -56,4 +58,29 @@ body::-webkit-scrollbar{
 }
 .response{
     width:100%
+}
+.animate-spin{
+    animation: 1s infinite linear spin;
+}
+@keyframes spin {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+input{
+    outline: none
+}
+.main-body-section{
+    
+}
+.hide-scrollbar{
+    overflow: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
