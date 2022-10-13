@@ -36,6 +36,10 @@ function Dashboard(props: Props) {
     getNumUserPages()
   },[defaultPage])
 
+  useEffect(()=>{
+    // splitpages(activepage)
+  },[activepage])
+
 
   const filterUser = (val: object | any) => {
     let filterTotalUser = dataInfo.filter(
@@ -77,13 +81,15 @@ function Dashboard(props: Props) {
    const ArrowmovePage=(val:string)=>{
     switch (val) {
       case 'back':
+        if(activepage <= 1) return
         setactivePage(activepage-1)
-        splitpages(activepage)
+        splitpages(activepage-1)
         break;
     
       case 'next':
+        if(activepage >= totalPage) return
         setactivePage(activepage+1)
-        splitpages(activepage)
+        splitpages(activepage+1)
           break;
     }
    }
