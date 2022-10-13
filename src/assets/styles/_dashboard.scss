@@ -63,7 +63,8 @@ content:"";
 @apply w-full h-[2px] bg-lengsqr-300 bottom-0 left-0 absolute
 }
 .user-info-pallet{
-  @apply p-3 lg:w-[20%] relative md:w-[25%] sm:w-[33.3333333%] text-lengsqr-500;
+  @apply p-3 lg:w-[20%] opacity-100 left-0 relative md:w-[25%] sm:w-[33.3333333%] text-lengsqr-500;
+  transform: scale(1);
 b{
     @apply text-[11px] block font-normal uppercase;
 }
