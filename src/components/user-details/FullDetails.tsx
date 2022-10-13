@@ -74,7 +74,7 @@ function FullDetails(props: Props) {
         'opacity:1;transform:scale(1);left:0'
       start++
       if (start >= pallet.length) clearInterval(childTranslate)
-    }, 300)
+    }, 200)
 
     if (start >= pallet.length) clearInterval(childTranslate)
   }, [userInfo])
@@ -82,7 +82,7 @@ function FullDetails(props: Props) {
   return (
     <div className="bg-white p-3 py-4 shadow-md rounded-md">
       <div>
-        <h3 className="w-full text-[14px] font-bold mb-3 pl-3">
+        <h3 className="w-full info-title-header text-[14px] font-bold mb-3 pl-3">
           Personal Information
         </h3>
         <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4 mb-4">
@@ -98,7 +98,7 @@ function FullDetails(props: Props) {
           })}
         </div>
 
-        <h3 className="w-full text-[14px] font-bold mb-3 pl-3">
+        <h3 className="w-full info-title-header text-[14px] font-bold mb-3 pl-3">
           Education and Employment
         </h3>
 
@@ -115,7 +115,7 @@ function FullDetails(props: Props) {
           })}
         </div>
 
-        <h3 className="w-full text-[14px] font-bold mb-3 pl-3">Socials</h3>
+        <h3 className="w-full info-title-header text-[14px] font-bold mb-3 pl-3">Socials</h3>
         <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4 mb-4">
           {socialInfo.map((info: any, index) => {
             return (
@@ -129,7 +129,7 @@ function FullDetails(props: Props) {
           })}
         </div>
 
-        <h3 className="w-full text-[14px] font-bold mb-3 pl-3">Guarantor</h3>
+        <h3 className="w-ful info-title-header text-[14px] font-bold mb-3 pl-3">Guarantor</h3>
         <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4">
           {guarantorInfo.map((info: any, index) => {
             return (
