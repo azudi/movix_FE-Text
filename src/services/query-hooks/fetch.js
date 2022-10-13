@@ -71,7 +71,7 @@ export function Get({ method, url }) {
   return { ...info }
 }
 
-//  axios POST function
+// axios POST function
 export function Post({ method, url, data }) {
   const [info, setInfo] = useState({
     data: undefined,
