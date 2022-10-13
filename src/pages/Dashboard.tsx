@@ -82,13 +82,11 @@ function Dashboard(props: Props) {
     switch (val) {
       case 'back':
         if(activepage <= 1) return
-        setactivePage(activepage-1)
         splitpages(activepage-1)
         break;
     
       case 'next':
         if(activepage >= totalPage) return
-        setactivePage(activepage+1)
         splitpages(activepage+1)
           break;
     }
