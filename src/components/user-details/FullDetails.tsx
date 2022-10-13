@@ -67,7 +67,7 @@ function FullDetails(props: Props) {
   }, [])
 
   useEffect(() => {
-    let pallet = document.querySelectorAll('.user-info-pallet')
+    let pallet = document.querySelectorAll('.slide-bar')
     let start = 0
     let childTranslate = setInterval(() => {
       (pallet[start] as any).style.opacity = 1;
@@ -86,10 +86,12 @@ function FullDetails(props: Props) {
         <h3 className="w-full info-title-header text-[14px] font-bold mb-3 pl-3">
           Personal Information
         </h3>
-        <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4 mb-4">
+        <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4 mb-4 slide-bar">
           {personalInfo.map((info: any, index) => {
             return (
-              <div className="user-info-pallet">
+              <div
+              key={info.data}
+              className="user-info-pallet">
                 <b>{info.title}</b>
                 <span className="w-full truncate inline-block capitalize">
                   {info.data}
@@ -103,10 +105,12 @@ function FullDetails(props: Props) {
           Education and Employment
         </h3>
 
-        <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4 mb-4">
+        <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4 mb-4 slide-bar">
           {educationInfo.map((info: any, index) => {
             return (
-              <div className="user-info-pallet">
+              <div 
+              key={info.data}
+              className="user-info-pallet">
                 <b>{info.title}</b>
                 <span className="w-full truncate inline-block capitalize">
                   {info.data}
@@ -117,10 +121,12 @@ function FullDetails(props: Props) {
         </div>
 
         <h3 className="w-full info-title-header text-[14px] font-bold mb-3 pl-3">Socials</h3>
-        <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4 mb-4">
+        <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4 mb-4 slide-bar">
           {socialInfo.map((info: any, index) => {
             return (
-              <div className="user-info-pallet">
+              <div 
+              key={info.data}
+              className="user-info-pallet">
                 <b>{info.title}</b>
                 <span className="w-full truncate inline-block capitalize">
                   {info.data}
@@ -131,10 +137,12 @@ function FullDetails(props: Props) {
         </div>
 
         <h3 className="w-ful info-title-header text-[14px] font-bold mb-3 pl-3">Guarantor</h3>
-        <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4">
+        <div className="flex flex-wrap border-b-[2px] border-b-gray/50 pb-4 slide-bar">
           {guarantorInfo.map((info: any, index) => {
             return (
-              <div className="user-info-pallet">
+              <div 
+              key={info.data}
+              className="user-info-pallet">
                 <b>{info.title}</b>
                 <span className="w-full truncate inline-block capitalize">
                   {info.data}
@@ -144,10 +152,12 @@ function FullDetails(props: Props) {
           })}
         </div>
 
-        <div className="flex flex-wrap pb-2 pt-12">
+        <div className="flex flex-wrap pb-2 pt-12 slide-bar">
           {guarantorInfo.map((info: any, index) => {
             return (
-              <div className="user-info-pallet">
+              <div 
+              key={info.data + 'gaurantor'}
+              className="user-info-pallet">
                 <b>{info.title}</b>
                 <span className="w-full truncate inline-block capitalize">
                   {info.data}
