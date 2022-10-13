@@ -64,16 +64,18 @@ content:"";
 }
 .user-info-pallet{
   @apply p-3 lg:w-[20%] relative md:w-[25%] sm:w-[33.3333333%] text-lengsqr-500;
-  transition:0.5s;
-  left:2.5em;
-  transform: scale(0);
-  opacity: 0;
 b{
     @apply text-[11px] block font-normal uppercase;
 }
 span{
     @apply text-[13px] font-bold;
 }
+}
+.slide-bar{
+  transition:0.5s;
+  left:2.5em;
+  transform: scale(0);
+  opacity: 0;
 }
 .info-title-header{
   @apply text-[15px] text-lengsqr-500
