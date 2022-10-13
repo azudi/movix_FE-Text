@@ -63,8 +63,11 @@ content:"";
 @apply w-full h-[2px] bg-lengsqr-300 bottom-0 left-0 absolute
 }
 .user-info-pallet{
-@apply p-3 lg:w-[20%] relative left-10 md:w-[25%] scale-0 sm:w-[33.3333333%] text-lengsqr-500 opacity-0;
-transition:0.5s;
+  @apply p-3 lg:w-[20%] relative md:w-[25%] sm:w-[33.3333333%] text-lengsqr-500;
+  transition:0.5s;
+  left:2.5em;
+  transform: scale(0);
+  opacity: 0;
 b{
     @apply text-[11px] block font-normal uppercase;
 }
@@ -91,16 +94,7 @@ span{
 content:"";
 @apply w-full h-[2px] bg-lengsqr-300 bottom-0 left-0 absolute
 }
-.user-info-pallet{
-@apply p-3 lg:w-[20%] relative left-10 md:w-[25%] scale-0 sm:w-[33.3333333%] text-lengsqr-500 opacity-0;
-transition:0.5s;
-b{
-    @apply text-[11px] block font-normal uppercase;
-}
-span{
-    @apply text-[14px] font-bold;
-}
-}
+
 @keyframes swipe-out {
     from{
         transform: scale(0);
