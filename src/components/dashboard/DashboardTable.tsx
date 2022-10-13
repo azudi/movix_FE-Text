@@ -65,14 +65,14 @@ function DashboardTable(props: Props) {
   const showFilterFunc = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>, val?:any
   ) => {
+    if(totalUser.length <= 0) return
     settShowFilter(false)
     let moveInPixels =
       (event?.target as any)?.getBoundingClientRect().left -
       parent.current.getBoundingClientRect().left
-    const filterObject = Array.from(
-      document.getElementsByClassName('filter-container') as HTMLCollectionOf<
-        HTMLElement
-      >,
+
+     const filterObject = Array.from(
+      document.getElementsByClassName('filter-container') as HTMLCollectionOf<HTMLElement>,
     )
      if(val){
       settShowFilter(true)
@@ -95,8 +95,7 @@ function DashboardTable(props: Props) {
 
   useEffect(() => {
     let pallet = document.querySelectorAll('.user-comp-detail')
-    let start = 0
-    console.log(pallet.length)
+    let start = 0 
     let childTranslateLap = setInterval(() => {
       ;(pallet[start] as any).style.cssText = 'opacity:1;left:0'
       start++

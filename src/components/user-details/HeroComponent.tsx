@@ -7,7 +7,6 @@ interface Props {
 
 function HeroComponent(props: Props) {
   const { userInfo } = props
-  console.log('marry-me', userInfo)
   //Varialbe
   const [activePath, setActivePath] = useState('General Details')
   const [detailRoute, setDetailRoute] = useState([

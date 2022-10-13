@@ -16,7 +16,6 @@ function UserDetails(props: Props) {
   const navigation = useNavigate()
   const search = useLocation().search
   const name = new URLSearchParams(search).get('userId')
-  console.log('url-name', name)
 
 
   const { data: totalUser, isLoading, error, isError } = Get({
@@ -26,7 +25,7 @@ function UserDetails(props: Props) {
   let dataInfo: any = {}
   if (totalUser) {
     dataInfo = (totalUser as any).data
-    console.log('details-total-user', totalUser)
+
   }
 
 

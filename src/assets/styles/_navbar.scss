@@ -32,6 +32,7 @@ $font-stack: rgb(18 113 227);
 .nav-border-start{
     @apply border-l-4 border-lengsqr-500 bg-lengsqr-300/10;
     transition: 0.2s;
+    opacity: 1 !important;
 }
 #nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
     width: 35px;

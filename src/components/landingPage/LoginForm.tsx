@@ -35,7 +35,7 @@ export default function LoginForm() {
   return (
     <form
       onSubmit={submitUserInfo}
-      className="w-full lg:w-[70%] flex justify-center p-2 lg:p-0"
+      className="w-full lg:w-[70%] flex justify-center p-2 lg:p-0 landing-form"
     >
       <div className="w-full sm:w-[90%] md:w-[90%]">
         <h1 className="display-text text-[30px] text-lengsqr-500 font-[900] header-form mb-2">

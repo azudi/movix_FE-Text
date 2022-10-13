@@ -44,7 +44,7 @@ function DashboardCardContainer(props: Props) {
       ;(pallet[start] as any).style.cssText = 'opacity:1;top:0'
       start++
       if (start >= pallet.length) clearInterval(childTranslateNav)
-    }, 600)
+    }, 300)
   }, [])
 
   return (

@@ -13,6 +13,10 @@ interface Props {}
 function Dashboard(props: Props) {
   const {} = props
   const [users, setUsers] = useState([])
+  const [totalPage, setTotalPage] = useState<any>()
+  const [defaultPage, setdefaultPage] = useState(10)
+  const [startIndex, setstartIndex] = useState(1)
+  const [activepage, setactivePage] = useState(1)
 
   //Custom Hook
   const { data: totalUser, isLoading, isError } = Get({ method: 'GET', url: '/users' })
@@ -20,16 +24,20 @@ function Dashboard(props: Props) {
   if (totalUser) {
     dataInfo = (totalUser as any).data
     //  setUsers(dataInfo)
-    console.log('total-user', dataInfo)
   }
 
   useEffect(() => {
     if (!Array.isArray(dataInfo)) return
-    setUsers(dataInfo as any)
+    setTotalPage(Math.round(dataInfo.length/defaultPage))
+    paginateUsers(dataInfo)
   }, [totalUser])
 
+  useEffect(()=>{
+    getNumUserPages()
+  },[defaultPage])
+
+
   const filterUser = (val: object | any) => {
-    console.log(Object.entries(val))
     let filterTotalUser = dataInfo.filter(
       (item: any, index: number) =>
         item.email == (val?.email != '' ? val.email : item.email) &&
@@ -39,9 +47,46 @@ function Dashboard(props: Props) {
           (val?.phoneNumber != '' ? val.phoneNumber : item.phoneNumber) &&
         item.userName == (val?.username != '' ? val.username : item.userName),
     )
-    console.log(filterTotalUser)
     setUsers(filterTotalUser)
+   setTotalPage(Math.floor(users.length/defaultPage))
   }
+
+  const resetDefaultPage=(val: any)=>{
+    setdefaultPage(val)
+    setactivePage(1)
+    paginateUsers(dataInfo, val)
+  }
+
+  const paginateUsers=(dataUsers : any, val?: number | any)=>{
+    let filterUserTopage = dataUsers.filter((item: any,index : number)=> index < (val || defaultPage))
+    setUsers(filterUserTopage as any)
+  }
+
+  const getNumUserPages=()=>{
+    let checkForReminder = dataInfo.length % defaultPage > 0 ? 1 : 0
+    setTotalPage(Math.floor(dataInfo.length/defaultPage) + checkForReminder) 
+  }  
+
+  const splitpages =(val : number)=>{
+    setactivePage(val)
+    let filterUserTopage = dataInfo.filter((item: any,index : number)=> 
+    index > defaultPage*(val-1) && index < defaultPage*(val))
+    setUsers(filterUserTopage as any) 
+   }
+
+   const ArrowmovePage=(val:string)=>{
+    switch (val) {
+      case 'back':
+        setactivePage(activepage-1)
+        splitpages(activepage)
+        break;
+    
+      case 'next':
+        setactivePage(activepage+1)
+        splitpages(activepage)
+          break;
+    }
+   }
 
   if (isLoading) {
     return <PageLoader />
@@ -57,7 +102,12 @@ function Dashboard(props: Props) {
         <div>
           <DashboardCardContainer />
           <DashboardTable filterUser={filterUser} totalUser={users} />
-          <UserPagination />
+          <UserPagination ArrowmovePage={ArrowmovePage}
+           splitpages={splitpages} 
+           totalPage={totalPage} 
+           activePage={activepage}
+           resetDefaultPage={resetDefaultPage}
+           />
         </div>
       </section>
     </DashboardTemplate>

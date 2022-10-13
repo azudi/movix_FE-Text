@@ -59,7 +59,7 @@ function Topnav(props: Props) {
   let dataInfo: any = {}
   if (ProfileData) {
     dataInfo = (ProfileData as any).data
-    // console.log(ProfileData)
+
   }
 
   const toggleSideBar = () => {
