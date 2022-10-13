@@ -75,7 +75,7 @@ function FullDetails(props: Props) {
       (pallet[start] as any).style.left = '0'
       start++
       if (start >= pallet.length) clearInterval(childTranslate)
-    }, 200)
+    }, 400)
 
     if (start >= pallet.length) clearInterval(childTranslate)
   }, [userInfo])
