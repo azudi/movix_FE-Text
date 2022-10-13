@@ -3,7 +3,7 @@ import SpinnerDotIcon from '../svg-icon/SpinnerDotIcon'
 
 interface Props {
   width: string
-  isLoading: Boolean
+  isLoading: boolean
   title: string
 }
 
@@ -12,7 +12,10 @@ function FormButton(props: Props) {
 
   return (
     <button
-      className={`text-md bg-lengsqr-300 text-white flex justify-center items-center h-10 rounded-md`}
+      className={`text-md bg-lengsqr-300 text-white flex justify-center items-center h-10 rounded-md
+      ${!isLoading ? 'opacity-50' : 'opacity-100'}
+      `}
+      disabled={!isLoading}
       style={{ width: width }}
     >
       {title}

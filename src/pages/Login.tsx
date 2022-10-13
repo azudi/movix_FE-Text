@@ -14,11 +14,23 @@ function Login(props: Props) {
   //Hooks
   useEffect(() => {
     if (localStorage.getItem('lenszer-user-id')) navigation('/dashboard')
+
+    let pallet = document.querySelectorAll('.landing-down')
+    let start = 0
+    let childTranslateNav = setInterval(() => {
+      ;(pallet[start] as any).style.cssText = 'opacity:1;top:0'
+      start++
+
+      if (start >= pallet.length) {
+        clearInterval(childTranslateNav)
+      }
+    }, 700)
   }, [])
+
 
   return (
     <main className="landing-container flex-wrap">
-      <div className="login-image-container  w-11/12 lg:w-6/12 md:w-8/12">
+      <div className="landing-down login-image-container  w-11/12 lg:w-6/12 md:w-8/12">
         <div>
           <img alt="" src={groupIcon}></img>
         </div>
@@ -26,7 +38,7 @@ function Login(props: Props) {
           <img alt="" src={groupLabel} className="w-[100%]"></img>
         </div>
       </div>
-      <div className="login-form-container w-11/12 lg:w-6/12 md:w-8/12 shadow-md flex justify-center">
+      <div className="landing-down login-form-container w-11/12 lg:w-6/12 md:w-8/12 shadow-md flex justify-center">
         <LoginForm />
       </div>
     </main>

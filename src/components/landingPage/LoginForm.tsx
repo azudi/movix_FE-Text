@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import FormButton from '../widget/FormButton'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 export default function LoginForm() {
   //Variables
@@ -37,7 +38,7 @@ export default function LoginForm() {
       className="w-full lg:w-[70%] flex justify-center p-2 lg:p-0"
     >
       <div className="w-full sm:w-[90%] md:w-[90%]">
-        <h1 className="text-[30px] text-lengsqr-500 font-extrabold header-form mb-2">
+        <h1 className="display-text text-[30px] text-lengsqr-500 font-[900] header-form mb-2">
           Welcome!
         </h1>
         <span className="text-[14px] text-lengsqr-500 header-label">

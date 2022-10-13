@@ -35,3 +35,12 @@
 .forgot-label{
   font-family: 'Lato', sans-serif;
 }
+ input:invalid .input-form{
+  background-color: red !important;
+ }
+ .landing-down{
+    position: relative;
+    top:-80%;
+    opacity: 0;
+    transition: 1s;
+ }

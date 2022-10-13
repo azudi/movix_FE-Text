@@ -37,10 +37,6 @@ function Topnav(props: Props) {
   //Functions
   const logout = () => {
     localStorage.removeItem('lenszer-user-id')
-    toast.success('Log-out successfully', {
-      duration: 4000,
-      position: 'top-right',
-    })
     navigation('/')
   }
 
