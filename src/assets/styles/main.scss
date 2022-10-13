@@ -1,23 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @import 'landing';
+@import 'dashboard';
+@import 'tailwind';
+@import 'fontFace';
 @import 'navbar';
-@import "dashboard";
-@import 'footer';
-@import '../fonts/fontface';
-// Import the functions/mixins
-@import '@animxyz/core';
-
-// Add all the core/utilities selectors
-@include xyz-all;
-// --- Or for more control and granularity ---
-@include xyz-core;
-@include xyz-utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400&display=swap');
 
 $font-stack: rgb(18 113 227);
+
 
 html, body{
     overflow-x: hidden !important;
@@ -130,4 +119,26 @@ input{
 a{
     text-decoration: none !important;
     color: initial !important
+}
+.dropdown-item:active{
+    background: rgb(57 205 204 / 0.5) !important;
+}
+  
+.display-text{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: none;
+    -webkit-text-clip: text;
+    animation:4s linear infinite reverse flow-out;background-size:200%;background-position:left;
+    background-image: linear-gradient(30deg,rgb(57 205 204) 43%,white 45%, white 45.5%, rgb(158 158 158) 47%);
+     animation-direction:alternate;
+     background-clip:text;-webkit-background-clip:text;
+     color:transparent
+}
+@keyframes flow-out {
+   from{
+     background-position:left
+   }
+   to{
+     background-position:right
+   }
 }

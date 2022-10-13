@@ -1,5 +1,4 @@
 $font-stack: rgb(18 113 227);
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400&display=swap');
 
 .landing-container{
     @apply w-full flex justify-center px-0; 
@@ -19,7 +18,7 @@ $font-stack: rgb(18 113 227);
       @apply text-[13px] pl-2
     }
     button{
-     @apply w-12 bg-lengsqr-300 py-[8px] grid place-items-center scale-[105%];
+     @apply w-12 bg-lengsqr-300 py-[8px] grid scale-[105%] place-items-center;
      border-radius: 0 5px 5px 0;
     }
 }

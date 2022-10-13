@@ -49,29 +49,35 @@ function DashboardTable(props: Props) {
     }
   }
 
-
-  useEffect(()=>{
-    document.body.onclick = function(event : EventTarget | null | any){
-      if(!(document.querySelector('thead')?.contains(event.target) || 
-      document.querySelector(".filter-container")?.contains(event.target))){
-        settShowFilter(true);
+  useEffect(() => {
+    document.body.onclick = function (event: EventTarget | null | any) {
+      if (
+        !(
+          document.querySelector('thead')?.contains(event.target) ||
+          document.querySelector('.filter-container')?.contains(event.target)
+        )
+      ) {
+        settShowFilter(true)
       }
     }
   })
- 
- 
+
   const showFilterFunc = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>,
   ) => {
-     settShowFilter(false);
-     let moveInPixels =  (event.target as any).getBoundingClientRect().left - parent.current.getBoundingClientRect().left ;
-     const filterObject = Array.from(
-      document.getElementsByClassName('filter-container') as HTMLCollectionOf<HTMLElement>,
-    );
+    settShowFilter(false)
+    let moveInPixels =
+      (event.target as any).getBoundingClientRect().left -
+      parent.current.getBoundingClientRect().left
+    const filterObject = Array.from(
+      document.getElementsByClassName('filter-container') as HTMLCollectionOf<
+        HTMLElement
+      >,
+    )
 
-      filterObject.forEach(box => {
-        box.style.transform = `translateX(${moveInPixels}px)`;
-      });
+    filterObject.forEach((box) => {
+      box.style.transform = `translateX(${moveInPixels}px)`
+    })
   }
 
   const checkOffset = (event: any) => {
@@ -85,22 +91,21 @@ function DashboardTable(props: Props) {
     }
   }
 
-  useEffect(()=>{
-    let pallet = document.querySelectorAll(".user-comp-detail");
+  useEffect(() => {
+    let pallet = document.querySelectorAll('.user-comp-detail')
     let start = 0
     console.log(pallet.length)
-   let childTranslateLap =  setInterval(()=>{
-       (pallet[start] as any).style.cssText = 'opacity:1;left:0';
-       start++
-       if(start >= pallet.length) clearInterval(childTranslateLap)
-    },300)
-  
-      if(start >= pallet.length) clearInterval(childTranslateLap)
-  },[totalUser])
+    let childTranslateLap = setInterval(() => {
+      ;(pallet[start] as any).style.cssText = 'opacity:1;left:0'
+      start++
+      if (start >= pallet.length) clearInterval(childTranslateLap)
+    }, 300)
 
+    if (start >= pallet.length) clearInterval(childTranslateLap)
+  }, [totalUser])
 
   return (
-    <div className=" bg-white rounded-md p-6 custom-transition py-4 mt-8">  
+    <div className=" bg-white rounded-md p-6 custom-transition py-4 mt-8">
       <div
         className={`w-full  overflow-x-auto relative user-comp-detail`}
         style={{
@@ -162,9 +167,7 @@ function DashboardTable(props: Props) {
           <tbody className="user-table-body">
             {totalUser.map((item: any, index: any) => {
               return (
-                <tr className="py-3"
-                key={item.email}
-                >
+                <tr className="py-3" key={item.email}>
                   <td>{item.orgName}</td>
                   <td>{item.userName} </td>
                   <td>{item.email} </td>

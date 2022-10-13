@@ -19,6 +19,7 @@ module.exports = {
         },
         lengsqrgray: {
           100: '#E5E5E5',
+          200: 'rgba(33, 63, 125)'
         },
       },
       fontSize: {

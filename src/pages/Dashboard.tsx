@@ -5,54 +5,63 @@ import PageLoader from '../components/widget/PageLoader'
 import DashboardTemplate from '../layouts/HomeLayout/DashboardTemplate'
 import { useState } from 'react'
 import { Get } from '../services/query-hooks/fetch'
+import UserPagination from '../components/pagination/userPagination'
+import Pageerror from '../components/widget/Pageerror'
 
 interface Props {}
 
 function Dashboard(props: Props) {
-    const {} = props
-    const [users, setUsers] = useState([])
+  const {} = props
+  const [users, setUsers] = useState([])
 
-    //Custom Hook
-  const { data: totalUser, isLoading} = Get({method:'GET', url:'/users'})
-  let dataInfo : any = {}
-  if(totalUser){
-   dataInfo = (totalUser as any).data 
-  //  setUsers(dataInfo)
-   console.log("total-user",dataInfo)
-  }
-  
-useEffect(()=>{
-  if(!Array.isArray(dataInfo)) return
-  setUsers(dataInfo as any)
-},[totalUser])
-
-  const filterUser =(val: object | any)=>{
-     console.log(Object.entries(val))
-      let filterTotalUser = dataInfo.filter((item : any,index : number)=> 
-      item.email == (val?.email != ''? val.email : item.email) &&
-      item.orgName == (val?.organization != ''? val.organization : item.orgName) &&
-      item.phoneNumber == (val?.phoneNumber != ''? val.phoneNumber : item.phoneNumber) &&
-      item.userName == (val?.username != ''? val.username : item.userName)
-       )
-      console.log(filterTotalUser)
-      setUsers(filterTotalUser)
+  //Custom Hook
+  const { data: totalUser, isLoading, isError } = Get({ method: 'GET', url: '/users' })
+  let dataInfo: any = {}
+  if (totalUser) {
+    dataInfo = (totalUser as any).data
+    //  setUsers(dataInfo)
+    console.log('total-user', dataInfo)
   }
 
-  if(isLoading){
-    return (<PageLoader/>)
-  }
+  useEffect(() => {
+    if (!Array.isArray(dataInfo)) return
+    setUsers(dataInfo as any)
+  }, [totalUser])
 
-    return (
-        <DashboardTemplate>
-            <section>
-                <div className='w-full py-3 text-[19px] mt-4'>Users </div>
-                <div>
-                    <DashboardCardContainer/>
-                    <DashboardTable filterUser={filterUser} totalUser={users}/>
-                </div>
-            </section>
-        </DashboardTemplate>
+  const filterUser = (val: object | any) => {
+    console.log(Object.entries(val))
+    let filterTotalUser = dataInfo.filter(
+      (item: any, index: number) =>
+        item.email == (val?.email != '' ? val.email : item.email) &&
+        item.orgName ==
+          (val?.organization != '' ? val.organization : item.orgName) &&
+        item.phoneNumber ==
+          (val?.phoneNumber != '' ? val.phoneNumber : item.phoneNumber) &&
+        item.userName == (val?.username != '' ? val.username : item.userName),
     )
+    console.log(filterTotalUser)
+    setUsers(filterTotalUser)
+  }
+
+  if (isLoading) {
+    return <PageLoader />
+  }
+  if(isError){
+    return (<Pageerror/>)
+  }
+
+  return (
+    <DashboardTemplate>
+      <section>
+        <div className="w-full py-3 text-[19px] mt-4">Users </div>
+        <div>
+          <DashboardCardContainer />
+          <DashboardTable filterUser={filterUser} totalUser={users} />
+          <UserPagination />
+        </div>
+      </section>
+    </DashboardTemplate>
+  )
 }
 
 export default Dashboard

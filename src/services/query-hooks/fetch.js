@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useMemo, useState } from 'react'
 import { setParams } from './settings'
+import { useQuery } from 'react-query'
 
 //getting the params from settings
 const { BASE_URL, responseType, timeout: setTimeout, setToken } = setParams
@@ -58,7 +59,7 @@ export function Get({ method, url }) {
           ...info,
           data: undefined,
           isSuccess: false,
-          isLoading: true,
+          isLoading: false,
           isError: true,
           error,
         })
