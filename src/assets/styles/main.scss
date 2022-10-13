@@ -7,6 +7,10 @@
 
 $font-stack: rgb(18 113 227);
 
+::selection {
+    background: #39CDCC;
+    color:white
+  }
 
 html, body{
     overflow-x: hidden !important;
