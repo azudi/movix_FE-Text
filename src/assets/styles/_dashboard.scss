@@ -222,9 +222,6 @@ content:"";
       @apply opacity-100;
     }
     i{
-      @apply opacity-100 inline-flex w-[20px] h-[20px] bg-lengsqrgray-200/10 justify-center items-center mx-1 rounded-sm;
-    }
-    i:nth-of-type(1){
-      @apply opacity-60;
+      @apply inline-flex w-[20px] h-[20px] bg-lengsqrgray-200/10 justify-center items-center mx-1 rounded-sm;
     }
   }

@@ -42,7 +42,9 @@ function UserPagination(props: Props) {
       <div className="sm:w-6/12 justify-end pages-inicate-container">
 
        { totalPage > 0 && <div className='w-full flex items-center justify-end pages-inicate-container'>
-        <i onClick={()=>{ArrowmovePage('back')}}>
+        <i onClick={()=>{ArrowmovePage('back')}}
+        className={`${activePage <= 1 ? 'opacity-40' : "opacity-100"}`}
+        >
           <ArrowLeftIcon width="10" />
         </i>
         {Array.from({ length: totalPage>2 ? totalPage - 2 : totalPage } as any, () => 0).map(
@@ -81,7 +83,9 @@ function UserPagination(props: Props) {
             )
           })
         }
-        <i onClick={()=>{ArrowmovePage('next')}}>
+        <i onClick={()=>{ArrowmovePage('next')}}
+         className={`${activePage >= totalPage ? 'opacity-40' : "opacity-100"}`}
+        >
           <ArrowRightIcon width="10" />
         </i>
       </div>
