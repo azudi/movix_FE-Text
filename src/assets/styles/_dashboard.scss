@@ -74,6 +74,7 @@ span{
 }
 .slide-bar{
   transition:0.5s;
+  transform-origin: 0 0;
   left:2.5em;
   transform: scale(0);
   opacity: 0;
