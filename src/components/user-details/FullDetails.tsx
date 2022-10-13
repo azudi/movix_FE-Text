@@ -70,8 +70,9 @@ function FullDetails(props: Props) {
     let pallet = document.querySelectorAll('.user-info-pallet')
     let start = 0
     let childTranslate = setInterval(() => {
-      ;(pallet[start] as any).style.cssText =
-        'opacity:1;transform:scale(1);left:0'
+      (pallet[start] as any).style.opacity = 1;
+      (pallet[start] as any).style.transform = 'scale(1)';
+      (pallet[start] as any).style.left = '0'
       start++
       if (start >= pallet.length) clearInterval(childTranslate)
     }, 200)
