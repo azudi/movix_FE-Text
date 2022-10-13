@@ -35,7 +35,7 @@ function DropdownFilter(props: Props) {
 
   //Function
   const filterUserFunc = () => {
-    showFilterFunc()
+    showFilterFunc('event',true)
     filterUser(user)
   }
   useEffect(() => {

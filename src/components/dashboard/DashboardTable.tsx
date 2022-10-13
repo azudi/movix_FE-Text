@@ -63,18 +63,20 @@ function DashboardTable(props: Props) {
   })
 
   const showFilterFunc = (
-    event: React.MouseEvent<HTMLSpanElement, MouseEvent>,
+    event: React.MouseEvent<HTMLSpanElement, MouseEvent>, val?:any
   ) => {
     settShowFilter(false)
     let moveInPixels =
-      (event.target as any).getBoundingClientRect().left -
+      (event?.target as any)?.getBoundingClientRect().left -
       parent.current.getBoundingClientRect().left
     const filterObject = Array.from(
       document.getElementsByClassName('filter-container') as HTMLCollectionOf<
         HTMLElement
       >,
     )
-
+     if(val){
+      settShowFilter(true)
+     }
     filterObject.forEach((box) => {
       box.style.transform = `translateX(${moveInPixels}px)`
     })
@@ -168,7 +170,7 @@ function DashboardTable(props: Props) {
             {totalUser.map((item: any, index: any) => {
               return (
                 <tr className="py-3" key={item.email}>
-                  <td>{item.orgName}</td>
+                  <td className='pl-1'>{item.orgName}</td>
                   <td>{item.userName} </td>
                   <td>{item.email} </td>
                   <td>{item.phoneNumber}</td>
@@ -188,7 +190,7 @@ function DashboardTable(props: Props) {
                       {status[index]}
                     </button>
                   </td>
-                  <td>
+                  <td className='pr-2'>
                     <CDropdown>
                       <CDropdownToggle color="transparent">
                         <DotsVerticalIcon width="15px" />
