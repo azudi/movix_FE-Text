@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux';
-import { toggle } from "./navigation/navToggle"
+// import { toggle } from "./mutateUsers/Users"
 import rootReducer from './rootReducers';
 
 const reducers = combineReducers(rootReducer)

@@ -12,19 +12,25 @@ module.exports = {
         xs: '425px',
       },
       colors: {
-        lengsqr: {
-          300: '#39CDCC',
-          400: "#545F7D",
-          500: '#213F7D',
+       scellogreen: {
+          500: '#007F00',
         },
-        lengsqrgray: {
+        scellored: {
+          500: '#D30000',
+        },
+        scelloo: {
+          50:  '#F4F2FF',
           100: '#E5E5E5',
-          200: 'rgba(33, 63, 125)'
+          300: '#6D5BD0',
+          500: '#6E6893'
         },
       },
       fontSize: {
         xxs: '.625rem',
       },
+      transform: {
+        ".flip-x": { "--tw-rotate-x": "180deg" },
+      }
     },
   },
   variants: {

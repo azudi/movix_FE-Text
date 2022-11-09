@@ -1,5 +1,7 @@
+// these is a temporary fromat for a standard project use .ENV file
+
 export const setParams = {
-    BASE_URL : "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1",
+    BASE_URL : "https://cornie-assessment.herokuapp.com",
     responseType : 'json',
     // set time for axios request
     // set 0 to cancle timeout
