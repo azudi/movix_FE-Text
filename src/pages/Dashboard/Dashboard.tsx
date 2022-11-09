@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import TopNav from '../../components/navbar/TopNav'
+import TopNav from "../../components/navbar/TopNav"
 import DashboardLayout from '../../layouts/DashboardLayout'
 import { navRoutes } from '../../components/navbar/routes/topNavRoutes'
 import TopSearch from '../../components/search-strip/TopSearch'
