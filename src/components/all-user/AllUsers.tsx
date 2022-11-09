@@ -20,7 +20,7 @@ import { ReactComponent as UInfo } from '../../assets/images/svg/info.svg'
 import { setParams } from '../../services/query-hooks/settings'
 import SmallLoader from '../widget/smallLoader'
 import toast, { Toaster } from 'react-hot-toast'
-import TableHeader from '../widget/TableHeader'
+import TableHeader from '../widget/tableHeader'
 
 interface Props {
   refresh: any

@@ -1,5 +1,5 @@
 import stacks from './stack';
-import routes from './Routes';
+import routes from './routes';
 
 import Dashboard from '../pages/dashboard';
 
