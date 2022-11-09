@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import TopNav from "../../components/navbar/TopNav"
-import DashboardLayout from '../../layouts/DashboardLayout'
-import { navRoutes } from '../../components/navbar/routes/topNavRoutes'
-import TopSearch from '../../components/search-strip/TopSearch'
-import Footer from '../../components/footer'
+import TopNav from "../components/navbar/TopNav"
+import DashboardLayout from '../layouts/DashboardLayout'
+import { navRoutes } from '../components/navbar/routes/topNavRoutes'
+import TopSearch from '../components/search-strip/TopSearch'
+import Footer from '../components/footer'
 import axios from 'axios'
 import { useQuery } from 'react-query'
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../../redux/store'
-import { fixedState, mutateAllSAtate } from '../../redux/mutateUsers/users'
-import Loader from '../../components/widget/loader'
-import { setParams } from '../../services/query-hooks/settings'
+import { RootState } from '../redux/store'
+import { fixedState, mutateAllSAtate } from '../redux/mutateUsers/users'
+import Loader from '../components/widget/loader'
+import { setParams } from '../services/query-hooks/settings'
 
 interface Props {}
 
