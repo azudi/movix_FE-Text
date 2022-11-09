@@ -42,7 +42,11 @@ function Dashboard(props: Props) {
         }),
   )
 
-  
+
+    const LongestWord=(sentence : string)=>{
+      
+  }
+
   //Hooks
   useEffect(() => {}, [])
 
@@ -51,9 +55,10 @@ function Dashboard(props: Props) {
   return (
     <DashboardLayout>
       <div>
+
         <TopNav />
         <section className="bg-white mt-6 rounded-xl py-4 ">
-          <TopSearch />
+          <TopSearch refresh={refetch}/>
           <Routes>
             {navRoutes.map((item: any, index: number) => {
               const { Page, route } = item
@@ -64,6 +69,7 @@ function Dashboard(props: Props) {
           </Routes>
         </section>
         <Footer />
+
       </div>
     </DashboardLayout>
   )

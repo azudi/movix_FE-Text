@@ -80,9 +80,9 @@ function AllUsers(props: Props) {
     setLoadingIndex(id)
     axios
       .patch(`${setParams.BASE_URL}/activate-user/${id}`)
-      .then(() => {
+      .then(async () => {
+        await refresh()
         toast.success('User successfully activated!')
-        refresh()
       })
       .catch(() => {
         toast.error('User activation failed')
@@ -98,9 +98,9 @@ function AllUsers(props: Props) {
     setLoadingIndex(id)
     axios
       .delete(`${setParams.BASE_URL}/remove-user/${id}`)
-      .then(() => {
+      .then(async () => {
+        await refresh()
         toast.error('User deleted successfully!')
-        refresh()
       })
       .catch(() => {
         toast.error('User fail to delete')

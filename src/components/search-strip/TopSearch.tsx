@@ -29,10 +29,12 @@ import axios from 'axios'
 import { setParams } from '../../services/query-hooks/settings'
 import SmallLoader from '../widget/SmallLoader'
 
-interface Props {}
+interface Props {
+  refresh: Function
+}
 
-const TopSearch: React.FC = (props: Props) => {
-  const {} = props
+const TopSearch:React.FC<Props> = (props: Props) => {
+  const { refresh } = props
   const dispatch = useDispatch()
   const checkUsers = useSelector(
     (state: RootState) => state.toggle.checkedUsers,
@@ -98,12 +100,13 @@ const TopSearch: React.FC = (props: Props) => {
   }
 
   const payAll = async () => {
-    if(checkUsers.length < 1) return
+    if(checkUsers.length < 1 || isPaying) return
     setIspaying(true)
       checkUsers.forEach(async (element: number, index: number) => {
         await axios.patch(`${setParams.BASE_URL}/mark-paid/${element}`).
-        then(()=>{
+        then(async ()=>{
           if(index == checkUsers.length-1){
+            await refresh()
             setIspaying(false)
           }
         })
