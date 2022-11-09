@@ -95,10 +95,10 @@ body::-webkit-scrollbar {
 rounded-md cursor-pointer
 }
 .search-form{
-  @apply flex items-center bg-scelloo-50 px-3 py-2 min-w-[400px] rounded-md;
+  @apply flex items-center bg-scelloo-50 px-3 py-2 sm:min-w-[300px] md:min-w-[400px] w-auto rounded-md;
     input{
        flex:1 1 100%;
-       @apply outline-none text-[15px] text-scelloo-500 bg-transparent 
+       @apply outline-none text-[15px] text-scelloo-500 bg-transparent;
     }
 }
 .dropdown-toggle::after{
@@ -111,7 +111,9 @@ rounded-md cursor-pointer
   box-shadow: none !important;
 }
 .pay-dues{
-  @apply text-sm absolute right-8 uppercase py-2 text-white font-[500] px-2 bg-scelloo-300 rounded cursor-pointer;
+  @apply text-sm w-full sm:w-auto sm:absolute right-8 
+  text-center mt-3 sm:mt-0
+  uppercase py-2 text-white font-[500] px-2 bg-scelloo-300 rounded cursor-pointer;
   transform: -50%;
 }
  .chakra-menu__icon-wrapper{

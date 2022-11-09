@@ -111,7 +111,7 @@ const TopSearch: React.FC = (props: Props) => {
     }
 
   return (
-    <div className="px-6 pb-3 flex items-center w-full relative">
+    <div className="px-6 pb-3 flex flex-wrap items-center w-full relative">
       <Menu closeOnSelect={true}>
         <MenuButton as={Button} bgColor="transparent" px={0} py={0}>
           <div className="filter-box py-2">

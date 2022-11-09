@@ -21,7 +21,10 @@ const TopNav: React.FC<Props> = (props: Props) => {
 
   useEffect(() => {
     let getLocation = location.substring(location.lastIndexOf('/') + 1)
-    setActiveTab(getLocation == 'dashboard' ? '' : getLocation)
+    getLocation = getLocation == 'dashboard' ? '' : getLocation
+    setActiveTab(getLocation)
+
+    console.log(getLocation)
 
     dispatchRoute(getLocation)
   }, [])
