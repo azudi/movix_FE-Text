@@ -1,7 +1,7 @@
 
 
 const routes = {
-  landing: '/dashboard/*',
+  landing: '/*',
 }
 
 export default routes
