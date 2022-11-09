@@ -6,8 +6,9 @@ export interface CounterState {
   checkedUsers: Array<any>
   Allusers: Array<any>
   displayedUser: Array<any>
-  fixedState: Array<any>,
-  filterStringRef : string
+  fixedState: Array<any>
+  filterStringRef: string
+  userStatusString: string
 }
 
 const initialState: CounterState = {
@@ -15,7 +16,8 @@ const initialState: CounterState = {
   Allusers: [],
   displayedUser: [],
   fixedState: [],
-  filterStringRef: ''
+  filterStringRef: '',
+  userStatusString: '',
 }
 
 export const navToggleSlice = createSlice({
@@ -74,11 +76,16 @@ export const navToggleSlice = createSlice({
       const { type, payload } = action
 
       let cloneUser = state.fixedState
-      let cloneAllUsers = cloneUser.filter((item: any, index: number) =>
-        payload.action.toLowerCase() == ''
-          ? true
-          : item.paymentStatus == payload.action.toLowerCase(),
+      let cloneAllUsers = cloneUser.filter(
+        (item: any, index: number) =>
+          (payload.action.toLowerCase() == ''
+            ? true
+            : item.paymentStatus == payload.action.toLowerCase()) &&
+          (state.userStatusString.toLowerCase() == ''
+            ? true
+            : item.userStatus == state.userStatusString.toLowerCase()),
       )
+      state.filterStringRef = payload.action
       state.Allusers = [...cloneAllUsers]
       console.log('clone-users', state.Allusers)
     },
@@ -87,11 +94,16 @@ export const navToggleSlice = createSlice({
       const { type, payload } = action
 
       let cloneUser = state.fixedState
-      let cloneAllUsers = cloneUser.filter((item: any, index: number) =>
-        payload.action.toLowerCase() == ''
-          ? true
-          : item.userStatus == payload.action.toLowerCase(),
+      let cloneAllUsers = cloneUser.filter(
+        (item: any, index: number) =>
+          (payload.action.toLowerCase() == ''
+            ? true
+            : item.userStatus == payload.action.toLowerCase()) &&
+          (state.filterStringRef.toLowerCase() == ''
+            ? true
+            : item.paymentStatus == state.filterStringRef.toLowerCase()),
       )
+      state.userStatusString = payload.action
       state.Allusers = [...cloneAllUsers]
       console.log('clone-users', state.Allusers)
     },
@@ -134,17 +146,17 @@ export const navToggleSlice = createSlice({
       switch (payload.search) {
         case 'firstname':
           state.Allusers = cloneUser.filter((item, index) =>
-             item.firstName.toLowerCase().includes(payload.val)
+            item.firstName.toLowerCase().includes(payload.val),
           )
           break
         case 'email':
           state.Allusers = cloneUser.filter((item, index) =>
-          item.email.toLowerCase().includes(payload.val)
+            item.email.toLowerCase().includes(payload.val),
           )
           break
         case 'lastlogin':
           state.Allusers = cloneUser.filter((item, index) =>
-          item.lastLogin.includes(payload.val)
+            item.lastLogin.includes(payload.val),
           )
           break
       }
@@ -161,7 +173,7 @@ export const {
   resetFixedState,
   sortUsers,
   stateResetStaus,
-  searchUsers
+  searchUsers,
 } = navToggleSlice.actions
 
 export default navToggleSlice.reducer
