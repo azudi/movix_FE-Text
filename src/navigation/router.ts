@@ -1,7 +1,7 @@
 import stacks from './stack';
 import routes from './Routes';
 
-import Dashboard from '../pages/Dashboard/Dashboard';
+import Dashboard from '../pages/Dashboard';
 
 
 const route = [

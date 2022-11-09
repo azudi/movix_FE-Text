@@ -6,7 +6,8 @@ export interface CounterState {
   checkedUsers: Array<any>
   Allusers: Array<any>
   displayedUser: Array<any>
-  fixedState: Array<any>
+  fixedState: Array<any>,
+  filterStringRef : string
 }
 
 const initialState: CounterState = {
@@ -14,6 +15,7 @@ const initialState: CounterState = {
   Allusers: [],
   displayedUser: [],
   fixedState: [],
+  filterStringRef: ''
 }
 
 export const navToggleSlice = createSlice({
