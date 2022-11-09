@@ -1,7 +1,7 @@
 import React from 'react'
-import AllUsers from '../../all-user/AllUsers'
-import UnPaid from '../../un-paid/UnPaid'
-import OverDue from '../../over-due/OverDue'
+import AllUsers from '../../all-user/allUsers'
+import UnPaid from '../../un-paid/unPaid'
+import OverDue from '../../over-due/overDue'
 import PaidSection from '../../paid/paidSection'
 
  export const navRoutes = [

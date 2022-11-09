@@ -18,7 +18,7 @@ import { PaymentStatus } from '../constant/paymentStatus'
 import axios from 'axios'
 import { ReactComponent as UInfo } from '../../assets/images/svg/info.svg'
 import { setParams } from '../../services/query-hooks/settings'
-import SmallLoader from '../widget/SmallLoader'
+import SmallLoader from '../widget/smallLoader'
 import toast, { Toaster } from 'react-hot-toast'
 import TableHeader from '../widget/TableHeader'
 

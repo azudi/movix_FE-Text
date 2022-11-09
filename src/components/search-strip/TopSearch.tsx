@@ -27,7 +27,7 @@ import {
 } from '../../redux/mutateUsers/users'
 import axios from 'axios'
 import { setParams } from '../../services/query-hooks/settings'
-import SmallLoader from '../widget/SmallLoader'
+import SmallLoader from '../widget/smallLoader'
 
 interface Props {
   refresh: Function

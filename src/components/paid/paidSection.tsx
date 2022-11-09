@@ -1,5 +1,5 @@
 import React from 'react'
-import AllUsers from '../all-user/AllUsers'
+import AllUsers from '../all-user/allUsers'
 
 interface Props {
   refresh: any

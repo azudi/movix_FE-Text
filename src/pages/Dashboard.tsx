@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import TopNav from "../components/navbar/TopNav"
-import DashboardLayout from '../layouts/DashboardLayout'
+import TopNav from "../components/navbar/topNav"
+import DashboardLayout from '../layouts/dashboardLayout'
 import { navRoutes } from '../components/navbar/routes/topNavRoutes'
-import TopSearch from '../components/search-strip/TopSearch'
+import TopSearch from '../components/search-strip/topSearch'
 import Footer from '../components/footer'
 import axios from 'axios'
 import { useQuery } from 'react-query'
