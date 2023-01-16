@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import React, { ReactNode } from 'react'
 
 interface Props {
@@ -11,6 +12,8 @@ function DashboardLayout(props: Props) {
         <main className='dashboard-template'>
             <section className='bg-none'>
                 {props.children}
+
+                <Footer/>
             </section>
         </main>
     )

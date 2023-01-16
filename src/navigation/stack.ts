@@ -1,8 +1,10 @@
 
 
-const route = {
-    Landing: 'landing',
+const stack = {
+    LANDING: 'landing',
+    AUTH: 'auth',
+    APP: 'app'
 }
 
 
-export default route
+export default stack

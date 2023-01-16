@@ -3,7 +3,7 @@ import  navToggleSlice from "./mutateUsers/users"
 
 
 const rootReducer = {
-    toggle: navToggleSlice
+    userInfo: navToggleSlice
 }
 
 

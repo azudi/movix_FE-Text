@@ -11,20 +11,18 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import { Toaster } from 'react-hot-toast'
 import { store } from './redux/store'
 import { Provider } from 'react-redux'
-import { ChakraProvider } from '@chakra-ui/react'
 
 const queryClient = new QueryClient()
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
 root.render(
   <Provider store={store}>
     <QueryClientProvider client={queryClient}>
-      <ChakraProvider>
         <React.StrictMode>
           <App />
           <Toaster />
         </React.StrictMode>
-      </ChakraProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   </Provider>,
