@@ -5,6 +5,6 @@ export default function isLoggedIn (){
     const navigation = useNavigate()
     //...code here
     window.addEventListener('storage', () => {
-        if (!localStorage.getItem('lenszer-user-id')) navigation('/')
+        if (!localStorage.getItem('movix_user')) navigation('/')
       })
 }

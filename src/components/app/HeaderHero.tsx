@@ -56,7 +56,7 @@ const HeaderHero: React.FC<Props> = (props: Props) => {
         <div className="w-3/12  md:w-3/12 flex justify-end items-center">
           <span className="text-white mr-2 font-[500] capitalize hidden sm:inline-block">
             { user?.displayName }</span>
-          <span className="relative outline-none">
+          <span className="relative outline-none cursor-pointer">
             <i onClick={() => setTopNavDP(!topNavDp)}>
               <MenuIcon />
             </i>
